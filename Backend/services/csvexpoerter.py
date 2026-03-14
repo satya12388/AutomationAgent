@@ -18,6 +18,8 @@ def export_to_csv(testcases):
 
     df = pd.DataFrame(rows)
 
-    df.to_csv("Output/generated_testcases.csv", index=False)
+    os.makedirs("output", exist_ok=True)
 
-    return "Output/generated_testcases.csv"
+    df.to_csv("output/generated_testcases.csv", index=False)
+
+    return "output/generated_testcases.csv"
