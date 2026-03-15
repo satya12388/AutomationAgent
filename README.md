@@ -26,7 +26,7 @@ The system uses [Streamlit](https://streamlit.io/) for an interactive and profes
 QA Automation Agent/
 ├── Backend/
 │   ├── agents/                   # LangGraph nodes and StateGraph construction (graph.py, nodes.py)
-│   ├── prompts/                  # Prompt engineering templates for each distinct generation stage #adjust for test case and requirement count
+│   ├── prompts/                  # Prompt engineering templates for each distinct generation stage and adjust these for test case and requirement count
 │   ├── schemas/                  # Pydantic schemas for structured LLM JSON outputs
 │   └── services/                 # Core logic services (document.py, testcasegenerator.py, etc.)
 ├── Frontend/
@@ -45,7 +45,7 @@ QA Automation Agent/
 1. **Clone the Repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone [AutomationAgent](https://github.com/satya12388/AutomationAgent.git)
    cd QA-Automation-Agent
    ```
 
