@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 from Backend.prompts.robotscriptgen_prompt import robotscript_template
 
 model = ChatGroq(
-    model="openai/gpt-oss-20b",
+    model="llama-3.3-70b-versatile",
     temperature=0
 )
 

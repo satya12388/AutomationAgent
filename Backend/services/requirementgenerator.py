@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 from Backend.prompts.requirementgen_prompt import requirementgen_template
 
 
-model = ChatGroq(model="openai/gpt-oss-120b")
+model = ChatGroq(model="llama-3.3-70b-versatile")
 structured_model = model.with_structured_output(RequirementList)
 
 prompt = PromptTemplate(

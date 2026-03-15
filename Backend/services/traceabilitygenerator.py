@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 from Backend.prompts.traceabilitygen_prompt import traceability_template
 
 model = ChatGroq(
-    model="llama-3.1-8b-instant",
+    model="llama-3.3-70b-versatile",
     temperature=0
 )
 
