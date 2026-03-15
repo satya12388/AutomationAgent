@@ -1,8 +1,10 @@
 import streamlit as st
+from st_aggrid import AgGrid
 import os
 import shutil
 import uuid
 import sys
+import pandas as pd
 
 # Ensure the parent directory is in the path to import Backend
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -163,18 +165,27 @@ elif st.session_state.graph_stage == "review":
             tc_data = []
 
         if tc_data:
+            rows = []
             for i, tc in enumerate(tc_data):
-                with st.expander(f"{tc.get('test_case_id', f'TC-{i+1}')}: {tc.get('title', 'Untitled')}"):
-                    st.markdown(f"**Requirement ID:** {tc.get('requirement_id', 'N/A')}")
-                    st.markdown(f"**Priority:** {tc.get('priority', 'N/A')}")
-                    st.markdown(f"**Preconditions:** {tc.get('preconditions', 'None')}")
-                    
-                    st.markdown("**Steps:**")
-                    steps = tc.get("steps", [])
-                    for idx, step in enumerate(steps):
-                        st.markdown(f"{idx + 1}. {step}")
-                        
-                    st.markdown(f"**Expected Result:** {tc.get('expected_result', 'N/A')}")
+                rows.append({
+                    "Test Case ID": tc.get("test_case_id", f"TC-{i+1}"),
+                    "Title": tc.get("title", "Untitled"),
+                    "Requirement ID": tc.get("requirement_id", "N/A"),
+                    "Priority": tc.get("priority", "N/A"),
+                    "Preconditions": tc.get("preconditions", "None"),
+                    "Steps": "\n".join(tc.get("steps", [])),
+                    "Expected Result": tc.get("expected_result", "N/A"),
+                })
+    
+            df = pd.DataFrame(rows)
+    
+            st.subheader("Generated Test Cases")
+    
+            AgGrid(
+                df,
+                fit_columns_on_grid_load=True,
+                height=400
+            )
         else:
             if hasattr(testcases, "model_dump"):
                 st.json(testcases.model_dump())
@@ -230,18 +241,15 @@ elif st.session_state.graph_stage == "completed":
     
     if preview_selection == "Test Cases (CSV)":
         csv_path = results.get("csv_path")
+
         if csv_path and os.path.exists(csv_path):
             try:
-                with open(csv_path, "r", encoding='utf-8') as f:
-                    csv_text = f.read()
-                
-                # Render the CSV as raw text in a nice code block so it always works
-                # and bypasses all Pandas/PyArrow errors completely.
-                st.code(csv_text, language="csv")
+                df = pd.read_csv(csv_path).astype(str)
+                AgGrid(df)
             except Exception as e:
                 st.error(f"Error reading CSV file: {str(e)}")
         else:
-            st.error(f"CSV file not found.")
+            st.error("CSV file not found.")
             
     elif preview_selection == "Robot Script":
         script_path = results.get("script_path")

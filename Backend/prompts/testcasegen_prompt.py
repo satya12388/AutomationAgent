@@ -4,7 +4,7 @@ You are a QA Automation Expert.
 Based on the following feature/design requirements,
 generate comprehensive test cases.
 Test Cases should look enterprise grade and professional
-
+Test steps should be in new line with number bullets.
 
 Document:
 {requirement}
@@ -12,7 +12,7 @@ Document:
 UserFeed Back(if Any):
 {feedback}
 
-Max 30 Test cases
+Max 05 Test cases
 Return the output STRICTLY matching the schema.
 
 Do not include explanations.

@@ -8,7 +8,7 @@ Rules:
 - Only functional requirements
 - Keep descriptions concise
 
-Max 10 requirements
+Max 5 requirements
 Return the output STRICTLY matching the schema.
 
 Do not include explanations.

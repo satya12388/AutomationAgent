@@ -7,3 +7,4 @@ python-docx
 dotenv
 pandas
 streamlit
+streamlit-aggrid

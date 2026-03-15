@@ -12,6 +12,7 @@ Requirements:
 - Use good naming conventions
 - if any keywords make sure you have keywords section and define all the keywords in the keywords section.
 - make sure the script is without any errors and is of production quality.
+- Dont give blank file.
 
 Return ONLY the Robot Framework script directly no explainations nothing extra including nheadings or comments only robot script.
 
