@@ -1,6 +1,0 @@
-requirement ID,Test Case ID,Title,Preconditions,Steps,Expected Result,Priority
-REQ-001,TC-001,SSO Authentication and ROLE_FAULT_WRITE Permission,Customer Service Agent has valid SSO credentials and ROLE_FAULT_WRITE permission,Login with SSO credentials | Verify ROLE_FAULT_WRITE permission,Successful authentication and permission validation,High
-REQ-002,TC-002,Fault Creation via API,Valid request payload and authenticated user,Send POST request to /api/v1/faults/raise | Verify HTTP 202 Accepted response,Ticket Reference ID received within sub-second latency,High
-REQ-004,TC-003,Idempotent Fault Submission,Valid request payload and authenticated user,Send duplicate POST requests to /api/v1/faults/raise | Verify only one ticket is created,No duplicate tickets created,Medium
-REQ-005,TC-004,FaultCreatedEvent Processing,Valid FaultCreatedEvent published to Kafka topic,Verify event is processed by parallel consumer groups | Verify failures are isolated between consumers,Successful event processing and isolation of failures,Medium
-REQ-003,TC-005,Request Payload Validation,Invalid request payload sent to /api/v1/faults/raise,Send invalid POST request to /api/v1/faults/raise | Verify validation error response,Validation error response received,Low

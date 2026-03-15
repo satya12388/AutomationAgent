@@ -26,7 +26,7 @@ The system uses [Streamlit](https://streamlit.io/) for an interactive and profes
 QA Automation Agent/
 ├── Backend/
 │   ├── agents/                   # LangGraph nodes and StateGraph construction (graph.py, nodes.py)
-│   ├── prompts/                  # Prompt engineering templates for each distinct generation stage
+│   ├── prompts/                  # Prompt engineering templates for each distinct generation stage #adjust for test case and requirement count
 │   ├── schemas/                  # Pydantic schemas for structured LLM JSON outputs
 │   └── services/                 # Core logic services (document.py, testcasegenerator.py, etc.)
 ├── Frontend/
