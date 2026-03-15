@@ -183,8 +183,8 @@ elif st.session_state.graph_stage == "review":
     
             AgGrid(
                 df,
-                fit_columns_on_grid_load=True,
-                height=400
+                # fit_columns_on_grid_load=True,
+                # height=400
             )
         else:
             if hasattr(testcases, "model_dump"):

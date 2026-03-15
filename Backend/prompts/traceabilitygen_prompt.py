@@ -5,24 +5,17 @@ Create a professional Requirements Traceability Matrix (RTM) for the following p
 
 Follow industry standards used in software development and quality assurance.
 
-Include the following columns in the table:
-1. Requirement ID
-2. Business Requirement Description
-3. Functional Requirement
-4. Module / Feature
-5. Priority (High/Medium/Low)
-6. Test Case ID
-7. Test Case Description
-Below should be blank and ask tester to update
-8. Test Status (Pass/Fail/Blocked)
-9. Responsible Team/Owner
-10. Comments
+Include the following :
+1. How many test cases were mapped to each requirement
+2. How many test cases were mapped to priority
+3. WHat are the test cases that has to be Passed before sign off
+4. To Do Tasks for signing off the feature.
+
 
 Formatting requirements:
-- Present the RTM in a clean, professional table format.
+- Present the RTM in a clean, professional format.
 - Use clear requirement IDs like BR-01, FR-01, TC-01.
 - Ensure traceability from requirement to testing.
-- Add at least 8–10 example entries.
 - Make the matrix suitable for documentation in Excel or project reports.
 
 Project Context:

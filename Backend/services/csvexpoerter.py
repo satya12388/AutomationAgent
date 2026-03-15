@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 def export_to_csv(testcases):
 
@@ -18,7 +19,7 @@ def export_to_csv(testcases):
 
     df = pd.DataFrame(rows)
 
-    # os.makedirs("output", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
 
     df.to_csv("output/generated_testcases.csv", index=False)
 
